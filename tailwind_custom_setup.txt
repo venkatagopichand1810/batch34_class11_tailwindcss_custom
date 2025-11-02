@@ -1,0 +1,88 @@
+first create the folder, open in vs code 
+open terminal 
+1) npm install -D tailwindcss@3 postcss autoprefixer
+2) npx tailwindcss init -p
+3) create index.html 
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+</body>
+</html>
+
+
+4) create input.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+5) tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html"
+  ],
+  theme: {
+    extend: {
+    },
+  },
+  plugins: [],
+}
+
+
+
+customization code
+--------------------------
+index.html
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+  <h1 class="text-3xl font-bold underline bg-shivakumar">
+    Hello world!
+  </h1>
+  <p class="bg-venkat">
+    this is venkat 
+  </p>
+  <h1 class="bg-pradeep">
+    this is pradeep
+  </h1>
+</body>
+</html>
+
+<!-- //skyblue -->
+
+
+tailwind.config.js
+================================
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html"
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "shivakumar" : "skyblue",
+        "venkat"  : "\#800020",
+        "pradeep" : "lightcoral"
+      }
+    },
+  },
+  plugins: [],
+}
+
+
